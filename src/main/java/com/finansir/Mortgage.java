@@ -95,4 +95,29 @@ public class Mortgage {
 	public void setMortgagePeriod(int mortgagePeriod) {
 		MortgagePeriod = mortgagePeriod;
 	}
+
+
+	public double getMonthlyPayment() {
+		return MonthlyPayment;
+	}
+
+
+	public double getHomeOwnersInsurance() {
+		return HomeOwnersInsurance;
+	}
+
+
+	public double getPropertyTax() {
+		return PropertyTax;
+	}
+
+
+	public double getHOAFees() {
+		return HOAFees;
+	}
+
+
+	public double getTotal() {
+		return Total;
+	}
 }
