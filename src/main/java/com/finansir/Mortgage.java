@@ -28,7 +28,7 @@ public class Mortgage {
 	public void calculateAll() {
 		this.MonthlyPayment = calculateMontlyPayments(this.MortgageAmount, this.InterestRate, this.MortgagePeriod);
 		this.HomeOwnersInsurance = calculateHomeownersInsurance();
-		this.PropertyTax = calculatePropertyTax();
+		this.PropertyTax = calculatePropertyTax(this.MortgageAmount, 1.53);
 		this.HOAFees = calculateHOAFees();
 		calculateTotal();
 	}
@@ -48,16 +48,23 @@ public class Mortgage {
 	}
 	
 	public double calculateHomeownersInsurance() {
+		// TO DO
 		double homeOwnersInsurance = 0.0;
 		return homeOwnersInsurance;
 	}
 	
-	public double calculatePropertyTax() {
+	
+	public double calculatePropertyTax(int homeValue, double countyTaxRate) {
 		double propertyTax = 0.0;
+		
+		countyTaxRate =  countyTaxRate / 100;
+		propertyTax = (homeValue * countyTaxRate) / 12;
+		
 		return propertyTax;
 	}
 	
 	public double calculateHOAFees() {
+		// TO DO
 		double hoaFees = 0.0;
 		return hoaFees;
 	}
