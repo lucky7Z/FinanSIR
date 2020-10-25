@@ -10,52 +10,52 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/main.css">
 
 <title>FinanSIR.com</title>
 </head>
 <body>
-	<h1>Welcome to FinanSIR</h1>
-	<br>
+	<div class="container">
+		<h1>Welcome to FinanSIR</h1>
+		<br>
 
-	<h3>MONTHLY COST</h3>
-	<hr>
-	<div class="container">
-		<form>
-			<label for="mortgageAmount">Mortgage Amount:</label> <input
-				type="number" id="mortgageAmount" name="mortgageAmount"><br>
-			<br> <label for="interestRate">Interest Rate (%):</label> <input
-				type="number" id="interestRate" name="interestRate"><br>
-			<br> <label for="mortgagePeriod">Mortgage Period
-				(years):</label> <input type="number" id="mortgagePeriod"
-				name="mortgagePeriod"><br>
-			<br>
-		</form>
+		<h3>MONTHLY COST</h3>
+		<hr>
+		<div class="container">
+			<form>
+				<label for="mortgageTotal">Mortgage Total:</label> <input
+					type="number" id="mortgageTotal" name="mortgageTotal"><br>
+				<br> <label for="interestRate">Interest Rate (%):</label> <input
+					type="number" id="interestRate" name="interestRate"><br>
+				<br> <label for="mortgagePeriod">Mortgage Period
+					(years):</label> <input type="number" id="mortgagePeriod"
+					name="mortgagePeriod"><br> <br>
+			</form>
+		</div>
+		<hr>
+		<div class="container">
+			<form>
+				<label for="monthlyPayments">Monthly Payments:</label> <input
+					type="number" id="monthlyPayments" name="monthlyPayments"><br>
+				<br> <label for="homeownersInsurance">Homeowner's
+					Insurance:</label> <input type="number" id="homeownersInsurance"
+					name="homeownersInsurance"><br> <br> <label
+					for="propertyTax">Property Tax:</label> <input type="number"
+					id="propertyTax" name="propertyTax"><br> <br> <label
+					for="hoaFees">HOA Fees:</label> <input type="number" id="hoaFees"
+					name="hoaFees"><br> <br>
+			</form>
+		</div>
+		<hr>
+		<div class="container">
+			<form>
+				<label for="total">Total:</label> <input type="text" id="total"
+					readonly />
+			</form>
+		</div>
+		<hr>
+		<button type="button" class="btn btn-success" id="btnCalculate">Calculate</button>
 	</div>
-	<hr>
-	<div class="container">
-		<form>
-			<label for="monthlyPayments">Monthly Payments:</label> <input
-				type="number" id="monthlyPayments" name="monthlyPayments"><br>
-			<br> <label for="homeownersInsurance">Homeowner's
-				Insurance:</label> <input type="number" id="homeownersInsurance"
-				name="homeownersInsurance"><br>
-			<br> <label for="propertyTax">Property Tax:</label> <input
-				type="number" id="propertyTax" name="propertyTax"><br>
-			<br> <label for="hoaFees">HOA Fees:</label> <input type="number"
-				id="hoaFees" name="hoaFees"><br>
-			<br>
-		</form>
-	</div>
-	<hr>
-	<div class="container">
-		<form>
-			<label for="total">Total:</label> <input type="text" id="total"
-				readonly />
-		</form>
-	</div>
-	<hr>
-	<button type="button" class="btn btn-success" id="btnCalculate">Calculate</button>
-
 
 </body>
 </html>
