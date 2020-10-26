@@ -1,10 +1,10 @@
-package com.plantplaces;
+package com.test.finansir;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PlantplacesApplicationTests {
+class FinansirApplicationTests {
 
 	@Test
 	void contextLoads() {
