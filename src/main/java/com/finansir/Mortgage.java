@@ -4,32 +4,32 @@ public class Mortgage {
 	
 	// Variables
 	
-	private int MortgageAmount;
-	private double InterestRate;
-	private int MortgagePeriod;
+	private int mortgageAmount;
+	private double interestRate;
+	private int mortgagePeriod;
 	
-	private double MonthlyPayment;
-	private double HomeOwnersInsurance;
-	private double PropertyTax;
-	private double HOAFees;
-	private double Total;
+	private double monthlyPayment;
+	private double homeOwnersInsurance;
+	private double propertyTax;
+	private double homeHOAFees;
+	private double total;
 	
 	// Constructor
 	
 	public Mortgage(int mortgageAmount, double interestRate, int mortgagePeriod) {
-		this.MortgageAmount = mortgageAmount;
-		this.InterestRate = interestRate;
-		this.MortgagePeriod = mortgagePeriod;
+		this.mortgageAmount = mortgageAmount;
+		this.interestRate = interestRate;
+		this.mortgagePeriod = mortgagePeriod;
 		
 		calculateAll();
 	}
 	
 	
 	public void calculateAll() {
-		this.MonthlyPayment = calculateMontlyPayments(this.MortgageAmount, this.InterestRate, this.MortgagePeriod);
-		this.HomeOwnersInsurance = calculateHomeownersInsurance();
-		this.PropertyTax = calculatePropertyTax(this.MortgageAmount, 1.53);
-		this.HOAFees = calculateHOAFees();
+		this.monthlyPayment = calculateMontlyPayments(this.mortgageAmount, this.interestRate, this.mortgagePeriod);
+		this.homeOwnersInsurance = calculateHomeownersInsurance();
+		this.propertyTax = calculatePropertyTax(this.mortgageAmount, 1.53);
+		this.homeHOAFees = calculateHOAFees();
 		calculateTotal();
 	}
 	
@@ -70,61 +70,61 @@ public class Mortgage {
 	}
 	
 	public void calculateTotal() {
-		this.Total = this.MonthlyPayment + this.HomeOwnersInsurance + this.PropertyTax + this.HOAFees;
+		this.total = this.monthlyPayment + this.homeOwnersInsurance + this.propertyTax + this.homeHOAFees;
 	}
 
 
 	public int getMortgageAmount() {
-		return MortgageAmount;
+		return mortgageAmount;
 	}
 
 
-	public void setMortgageAmount(int mortgageAmount) {
-		MortgageAmount = mortgageAmount;
+	public void setMortgageAmount(int MortgageAmount) {
+		mortgageAmount = MortgageAmount;
 	}
 
 
 	public double getInterestRate() {
-		return InterestRate;
+		return interestRate;
 	}
 
 
-	public void setInterestRate(double interestRate) {
-		InterestRate = interestRate;
+	public void setInterestRate(double InterestRate) {
+		interestRate = InterestRate;
 	}
 
 
 	public int getMortgagePeriod() {
-		return MortgagePeriod;
+		return mortgagePeriod;
 	}
 
 
-	public void setMortgagePeriod(int mortgagePeriod) {
-		MortgagePeriod = mortgagePeriod;
+	public void setMortgagePeriod(int MortgagePeriod) {
+		mortgagePeriod = MortgagePeriod;
 	}
 
 
 	public double getMonthlyPayment() {
-		return MonthlyPayment;
+		return monthlyPayment;
 	}
 
 
 	public double getHomeOwnersInsurance() {
-		return HomeOwnersInsurance;
+		return homeOwnersInsurance;
 	}
 
 
 	public double getPropertyTax() {
-		return PropertyTax;
+		return propertyTax;
 	}
 
 
 	public double getHOAFees() {
-		return HOAFees;
+		return homeHOAFees;
 	}
 
 
 	public double getTotal() {
-		return Total;
+		return total;
 	}
 }
