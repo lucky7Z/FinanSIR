@@ -48,8 +48,9 @@ public class Mortgage {
 	}
 	
 	public double calculateHomeownersInsurance() {
-		// TO DO
+		// Finish making the ability to calculate the homeowners insurance
 		double homeOwnersInsurance = 0.0;
+		
 		return homeOwnersInsurance;
 	}
 	
@@ -64,8 +65,9 @@ public class Mortgage {
 	}
 	
 	public double calculateHOAFees() {
-		// TO DO
+		// Finish making function to calculate the HOAfees
 		double hoaFees = 0.0;
+		
 		return hoaFees;
 	}
 	
