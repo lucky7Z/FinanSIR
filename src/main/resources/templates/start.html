@@ -1,61 +1,198 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<script>
+function myFunction(){
+	var mortgageAmount = document.getElementById("mortgageAmount").value;
+	var interestRate = document.getElementById("interestRate").value;
+	var mortgagePeriod = document.getElementById("mortgagePeriod").value;
+	
+	var subTotal = 0;
+	var totalCost = 0;
+	var totalInterest = 1 + (interestRate / 100);
+	var totalPeriod = mortgagePeriod * 12;	
+	
+	subTotal = mortgageAmount * totalInterest * totalPeriod;
+	
+	document.getElementById("total").value = subTotal;
+	
+}
+
+
+function myFunction2(){
+	
+	var subTotal = 0;
+	var total = 0;
+	var monthlyPayments = 0;
+	var homeownersInsurance = 0;
+	var propertyTax = 0;
+	var hoaFees = 0;
+	var additionalFees = 0;
+	
+	if(document.getElementById("monthlyPayments").value){
+		monthlyPayments = parseFloat(document.getElementById("monthlyPayments").value);
+		additionalFees += monthlyPayments;
+	}
+	
+	if(document.getElementById("homeownersInsurance").value){
+		homeownersInsurance = parseFloat(document.getElementById("homeownersInsurance").value);
+		additionalFees += homeownersInsurance;
+	}
+	
+	if(document.getElementById("propertyTax").value){
+		propertyTax = parseFloat(document.getElementById("propertyTax").value);
+		additionalFees += propertyTax;
+	}
+	
+	if(document.getElementById("hoaFees").value){
+		hoaFees = parseFloat(document.getElementById("hoaFees").value);
+		additionalFees += hoaFees;
+	}
+	
+	
+	if(document.getElementById("total").value){
+		subTotal = parseFloat(document.getElementById("total").value);
+	}
+	
+
+	total = subTotal + additionalFees;
+	
+	document.getElementById("total").value = total;
+}
+
+</script>
+
+
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 
+<style>
+html, body, header, .view {
+	height: 100%;
+}
+
+@media ( max-width : 740px) {
+	html, body, header, .view {
+		height: 1000px;
+	}
+}
+
+@media ( min-width : 800px) and (max-width: 850px) {
+	html, body, header, .view {
+		height: 600px;
+	}
+}
+
+.btn .fa {
+	margin-left: 3px;
+}
+
+.btn-white {
+	color: black !important;
+}
+
+h6 {
+	line-height: 1.7;
+}
+
+body {
+	background-color: #121212;
+}
+
+h1 {
+	color: #BB86FC;
+}
+
+label {
+	color: #03DAC6;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+input[type=button] {
+	width: 15%;
+	background-color: #CF6679;
+	color: #121212;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	height: 30px; %;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+input[type=button]:hover {
+	background-color: #B00020;
+	color: white;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+input[type=text] {
+	border: none;
+	border-bottom: 5px solid #018786;
+}
+</style>
 <title>FinanSIR.com</title>
 </head>
 <body>
-	<h1>Welcome to FinanSIR</h1>
-	<br>
+	<!-- Full Page Intro -->
+	<div class="view">
+		<!-- Mask & flexbox options-->
+		<!-- Content -->
+		<div class="container">
+			<!--Grid row-->
 
-	<h3>MONTHLY COST</h3>
-	<hr>
-	<div class="container">
-		<form>
-			<label for="mortgageAmount">Mortgage Amount:</label> <input
-				type="number" id="mortgageAmount" name="mortgageAmount"><br>
+			<!--Grid column-->
+			<div
+				class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft"
+				data-wow-delay="0.3s">
+				<h1 class="h1-responsive font-weight-bold mt-sm-5">Welcome to
+					FinanSIR</h1>
+				<hr class="hr-light">
+
+			</div>
+			<hr>
+
+
+			<label for="mortgageAmount">Monthly Cost: </label> <input
+				class="form-control" type="number" id="mortgageAmount"
+				name="mortgageAmount" /> <br>
 			<br> <label for="interestRate">Interest Rate (%):</label> <input
-				type="number" id="interestRate" name="interestRate"><br>
+				class="form-control" type="number" id="interestRate"
+				name="interestRate" /> <br>
 			<br> <label for="mortgagePeriod">Mortgage Period
-				(years):</label> <input type="number" id="mortgagePeriod"
-				name="mortgagePeriod"><br>
-			<br>
-		</form>
-	</div>
-	<hr>
-	<div class="container">
-		<form>
+				(years):</label> <input class="form-control" type="number" id="mortgagePeriod"
+				name="mortgagePeriod" /> <br>
+			<br> <input type="button" onclick="myFunction()"
+				value="Calculate">
+			<hr>
+
 			<label for="monthlyPayments">Monthly Payments:</label> <input
-				type="number" id="monthlyPayments" name="monthlyPayments"><br>
+				class="form-control" type="number" id="monthlyPayments"
+				name="monthlyPayments"><br>
 			<br> <label for="homeownersInsurance">Homeowner's
-				Insurance:</label> <input type="number" id="homeownersInsurance"
-				name="homeownersInsurance"><br>
+				Insurance:</label> <input class="form-control" type="number"
+				id="homeownersInsurance" name="homeownersInsurance"><br>
 			<br> <label for="propertyTax">Property Tax:</label> <input
-				type="number" id="propertyTax" name="propertyTax"><br>
-			<br> <label for="hoaFees">HOA Fees:</label> <input type="number"
-				id="hoaFees" name="hoaFees"><br>
-			<br>
-		</form>
+				class="form-control" type="number" id="propertyTax"
+				name="propertyTax"><br>
+			<br> <label for="hoaFees">HOA Fees:</label> <input
+				class="form-control" type="number" id="hoaFees" name="hoaFees"><br>
+			<br> 
+			<input type="button" onclick="myFunction2()"
+				value="Calculate"> <br><br>
+			<label for="total">Total:</label> <input
+				class="form-control" type="number" id="total" readonly /> <br> <br>
+			<br> <br>
+		</div>
 	</div>
-	<hr>
-	<div class="container">
-		<form>
-			<label for="total">Total:</label> <input type="text" id="total"
-				readonly />
-		</form>
-	</div>
-	<hr>
-	<button type="button" class="btn btn-success" id="btnCalculate">Calculate</button>
-
-
 </body>
 </html>
