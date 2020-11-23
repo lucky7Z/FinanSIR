@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <script>
-function myFunction(){
+function mortgageCalculation(){
 	var mortgageAmount = document.getElementById("mortgageAmount").value;
 	var interestRate = document.getElementById("interestRate").value;
 	var mortgagePeriod = document.getElementById("mortgagePeriod").value;
@@ -19,7 +19,7 @@ function myFunction(){
 }
 
 
-function myFunction2(){
+function taxCalculation(){
 	
 	var subTotal = 0;
 	var total = 0;
@@ -178,7 +178,7 @@ html, body, header, .view {
 			<br> <label for="mortgagePeriod">Mortgage Period
 				(years):</label> <input class="form-control" type="number" id="mortgagePeriod"
 				name="mortgagePeriod" /> <br>
-			<br> <input type="button" onclick="myFunction()"
+			<br> <input type="button" onclick="mortgageCalculation()"
 				value="Calculate">
 			<hr>
 
@@ -194,7 +194,7 @@ html, body, header, .view {
 			<br> <label for="hoaFees">HOA Fees:</label> <input
 				class="form-control" type="number" id="hoaFees" name="hoaFees"><br>
 			<br> 
-			<input type="button" onclick="myFunction2()"
+			<input type="button" onclick="taxCalculation()"
 				value="Calculate"> <br><br>
 			<label for="total">Total:</label> <input
 				class="form-control" type="number" id="total" readonly /> <br> <br>
