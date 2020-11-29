@@ -60,6 +60,9 @@ function myFunction2(){
 	document.getElementById("total").value = total;
 }
 
+function myClearFunction() {
+	  document.getElementById("form").reset();
+	}
 </script>
 
 
@@ -143,6 +146,7 @@ input[type=text] {
 <title>FinanSIR.com</title>
 </head>
 <body>
+<form>
 	<!-- Full Page Intro -->
 	<div class="view">
 		<!-- Mask & flexbox options-->
@@ -162,37 +166,40 @@ input[type=text] {
 			<hr>
 
 
-			<label for="mortgageAmount">Monthly Cost: </label> <input
+			<label for="mortgageAmount">Monthly Cost ($): </label> <input
 				class="form-control" type="number" id="mortgageAmount"
-				name="mortgageAmount" /> <br>
+				name="mortgageAmount" placeholder="ex: 2000"/> <br>
 			<br> <label for="interestRate">Interest Rate (%):</label> <input
 				class="form-control" type="number" id="interestRate"
-				name="interestRate" /> <br>
+				name="interestRate" placeholder="ex: 3"/> <br>
 			<br> <label for="mortgagePeriod">Mortgage Period
 				(years):</label> <input class="form-control" type="number" id="mortgagePeriod"
-				name="mortgagePeriod" /> <br>
+				name="mortgagePeriod" placeholder="ex: 30"/> <br>
 			<br> <input type="button" onclick="myFunction()"
 				value="Calculate">
 			<hr>
 
-			<label for="monthlyPayments">Monthly Payments:</label> <input
+			<label for="monthlyPayments">Monthly Payments ($):</label> <input
 				class="form-control" type="number" id="monthlyPayments"
-				name="monthlyPayments"><br>
+				name="monthlyPayments" placeholder="ex: 2500"><br>
 			<br> <label for="homeownersInsurance">Homeowner's
-				Insurance:</label> <input class="form-control" type="number"
-				id="homeownersInsurance" name="homeownersInsurance"><br>
-			<br> <label for="propertyTax">Property Tax:</label> <input
+				Insurance ($):</label> <input class="form-control" type="number"
+				id="homeownersInsurance" name="homeownersInsurance" placeholder="ex: 200"><br>
+			<br> <label for="propertyTax">Property Tax ($):</label> <input
 				class="form-control" type="number" id="propertyTax"
-				name="propertyTax"><br>
-			<br> <label for="hoaFees">HOA Fees:</label> <input
-				class="form-control" type="number" id="hoaFees" name="hoaFees"><br>
+				name="propertyTax" placeholder="ex: 300"><br>
+			<br> <label for="hoaFees">HOA Fees ($):</label> <input
+				class="form-control" type="number" id="hoaFees" name="hoaFees" placeholder="ex: 150"><br>
 			<br> 
 			<input type="button" onclick="myFunction2()"
-				value="Calculate"> <br><br>
+				value="Calculate">
+			<input type="reset" onclick="myClearFunction()" value="Clear">	
+				 <br><br>
 			<label for="total">Total:</label> <input
 				class="form-control" type="number" id="total" readonly /> <br> <br>
 			<br> <br>
 		</div>
 	</div>
+</form>
 </body>
 </html>
